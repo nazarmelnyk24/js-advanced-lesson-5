@@ -1,0 +1,74 @@
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Task</th>
+            <th>Check</th>
+            <th>Done / In progress</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let task of taskList; let i = index">
+            <td>{{i + 1}}</td>
+            <td>{{task.name}}</td>
+            <td>
+                <label class="checkbox-container">
+                    <input
+                    type="checkbox"
+                    #checkbox
+                    (click)="isDone(checkbox.checked, i)"
+                    >
+                    <span class="checkmark"></span>
+                </label>
+            </td>
+            <td 
+            class="progress" 
+            *ngIf="!task.isDone"
+            >In Progress
+            </td>
+            <td 
+            class="done" 
+            *ngIf="task.isDone"
+            >Done
+            </td>
+            <td>
+                <button 
+                class="btn btn_edit"
+                (click)="editTask(task.name, i)"
+                >Edit
+                </button>
+            </td>
+            <td>
+                <button 
+                class="btn btn_delete"
+                [disabled]='showEdit ? true : !task.isDone'
+                (click)="deleteTask(i)"
+                >Delete
+                </button>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot *ngIf="showEdit">
+        <tr>
+            <td></td>
+            <td colspan="3">
+                <input 
+                class="input"
+                type="text"
+                [value]="currentTaskName"
+                [ngStyle]="{'border': setBorder()}"
+                #edit
+                >
+            </td>
+            <td>
+                <button 
+                class="btn btn_save-edit"
+                (click)='saveEditTask(edit.value, currentIndex)'
+                >Save
+                </button>
+            </td>
+        </tr>
+    </tfoot>
+</table>

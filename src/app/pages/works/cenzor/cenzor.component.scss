@@ -1,0 +1,96 @@
+.cenzor {
+    width: 80%;
+    max-width: 1000px;
+    margin: 100px auto;
+    padding: 10px;
+    border-top: 2px solid #bbb;
+    border-bottom: 2px solid #bbb;
+
+    .word-list {
+        color: red;
+    }
+
+    form {
+        margin-top: 5px;
+
+        .word-input {
+            display: flex;
+            align-items: center;
+
+            input[type='text'] {
+                width: 100%;
+                padding: 5px;
+                border-radius: 5px;
+                outline: none;
+                border: none;
+                margin-right: 5px;
+            }
+
+            input[type='button'] {
+                margin: 0 5px;
+                width: 70px;
+                padding: 5px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                color: white;
+            }
+
+            input[value='Add'] {
+                background-color: hsl(50, 100%, 50%);
+                color: black;
+
+                &:hover {
+                    background-color: hsl(50, 90%, 50%);
+                }
+
+                 &:focus {
+                    outline: 2px solid hsl(50, 60%, 50%);
+                }
+            }
+
+            input[value='Reset'] {
+                background-color: hsl(20, 90%, 50%);
+
+                &:hover {
+                    background-color: hsl(20, 70%, 50%);
+                }
+
+                &:focus {
+                    outline: 2px solid hsl(20, 40%, 50%);
+                }
+            }
+        }
+
+        textarea {
+            width: 100%;
+            padding: 5px;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+            resize: none;
+            height: 100px;
+            margin-top: 10px;
+            border: 1px solid #666;
+        }
+
+        input[value='Cenzor'] {
+            width: 100%;
+            padding: 7px 0;
+            margin-top: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color:white;
+            background-color: hsl(160, 50%, 50%);
+
+            &:hover {
+                background-color: hsl(160, 40%, 50%);
+            }
+
+            &:focus {
+                outline: 2px solid hsl(160, 20%, 50%);
+            }
+        }
+    }
+}

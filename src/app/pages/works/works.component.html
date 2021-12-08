@@ -1,0 +1,31 @@
+<ul>
+    <li>
+        <span>Latest works >>></span>
+    </li>
+    <li>
+        <a 
+            [routerLink]="[ '/works/cenzor' ]" 
+            routerLinkActive="active"
+        >Cenzor
+        </a>
+    </li>
+    <li>
+        <a 
+            [routerLink]="[ '/works/tasklist' ]" routerLinkActive="active"
+        >Tasks
+        </a>
+    </li>
+    <li>
+        <a 
+            [routerLink]="[ '/works/userlist' ]" routerLinkActive="active"
+        >Users
+        </a>
+    </li>
+    <li class="home">
+        <a
+            [routerLink]="[ '/home' ]"
+        >Back to >>> Home
+        </a>
+    </li>
+</ul>
+<router-outlet></router-outlet>

@@ -1,0 +1,24 @@
+<h2>Count of tasks: {{taskList.length}}</h2>
+<form>
+    <input
+    class="input"
+    type="text"
+    name="task"
+    [ngStyle]="{'border': setBorder()}"
+    [(ngModel)]="task"
+    >
+    <input 
+    class="btn btn_add"
+    type="submit" 
+    value="Add"
+    (click)="addTask()"
+    >
+</form>
+
+<app-output 
+[taskList]='taskList'
+(isDoneToggle)='isDone($event)'
+(deleteTaskClick)='deleteTask($event)'
+(saveEditTaskClick)='saveEditTask($event)'
+>
+</app-output>
